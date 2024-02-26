@@ -8,11 +8,11 @@ import {
   Filler,
   Tooltip,
   Legend,
-} from 'chart.js/auto';  // Usar 'chart.js/auto' para versões mais recentes
+} from 'chart.js/auto'; // Usar 'chart.js/auto' para versões mais recentes
 
 import 'chart.js/auto';
 import { Typography } from '@mui/material';
-import { Chart as ChartJS2, ChartData, ChartOptions } from 'react-chartjs-2';
+import { Bar, ChartData, ChartOptions } from 'react-chartjs-2';
 
 import { ChartContainer } from './styles';
 import finances from './data.json';
@@ -47,7 +47,7 @@ const BarChart: React.FC<{
     'Dez',
   ];
 
-  const _data: ChartData = {
+  const data: ChartData = {
     labels: labels,
     datasets: [
       {
@@ -109,13 +109,7 @@ const BarChart: React.FC<{
   return (
     <ChartContainer>
       <Typography variant="h6">{title}</Typography>
-      <ChartJS2
-        type="bar"
-        data={_data}
-        options={options}
-        width={100}
-        height={50}
-      />
+      <Bar type="bar" data={data} options={options} />
     </ChartContainer>
   );
 };
