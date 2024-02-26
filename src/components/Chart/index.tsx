@@ -13,8 +13,7 @@ import {
 import 'chart.js/auto';
 import { Typography } from '@mui/material';
 import { Chart as ChartJS2 } from 'react-chartjs-2';
-const ChartData = require('react-chartjs-2').ChartData
-const ChartOptions = require('react-chartjs-2').ChartOptions
+import type { ChartData, ChartOptions } from 'chart.js'; 
 
 import { ChartContainer } from './styles';
 import finances from './data.json';
@@ -49,12 +48,11 @@ const BarChart: React.FC<{
     'Dez',
   ];
 
-  const _data: typeof ChartData = {
+  const _data: ChartData = {
     labels: labels,
     datasets: [
       {
         type: 'line' as ChartType,
-        id: 0,
         label: keys[0].replace('_', ' '),
         data: finances.dados_financeiros.map((mes) => mes['lucro_liquido']),
         borderWidth: 2,
@@ -65,7 +63,6 @@ const BarChart: React.FC<{
       },
       {
         type: 'bar' as ChartType,
-        id: 1,
         label: keys[1],
         data: finances.dados_financeiros.map((mes) => mes['receita']),
         borderWidth: 1,
@@ -76,7 +73,6 @@ const BarChart: React.FC<{
       },
       {
         type: 'bar' as ChartType,
-        id: 2,
         label: keys[2],
         data: finances.dados_financeiros.map((mes) => mes['despesa']),
         borderWidth: 1,
@@ -88,11 +84,10 @@ const BarChart: React.FC<{
     ],
   };
 
-  const options: typeof ChartOptions = {
+  const options: ChartOptions = {
     scales: {
       y: {
         ticks: {
-          callback: (value: number) => `R$ ${value.toLocaleString()}`,
         },
       },
     },
