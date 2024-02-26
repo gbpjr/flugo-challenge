@@ -3,8 +3,6 @@ import { Shadows } from '@mui/material/styles/shadows'
 
 // colors
 const black: string = '#333333'
-// const blue: string = '#2C64D6'
-// const darkBlue: string = '#1E4695'
 const gray: string = '#2B3743'
 const darkGray: string = '#151B21'
 

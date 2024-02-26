@@ -1,0 +1,105 @@
+{
+  "empresa": "Empresa XYZ",
+  "ano_fiscal": 2023,
+  "dados_financeiros": [
+    {
+      "mes": "jan",
+      "receita": 150000,
+      "despesa": 90000,
+      "lucro_liquido": 60000,
+      "saldo_acumulado": 60000,
+      "margem_lucro": 40
+    },
+    {
+      "mes": "fev",
+      "receita": 160000,
+      "despesa": 95000,
+      "lucro_liquido": 65000,
+      "saldo_acumulado": 125000,
+      "margem_lucro": 40.625
+    },
+    {
+      "mes": "mar",
+      "receita": 145000,
+      "despesa": 88000,
+      "lucro_liquido": 57000,
+      "saldo_acumulado": 182000,
+      "margem_lucro": 39.310344827586206
+    },
+    {
+      "mes": "abr",
+      "receita": 170000,
+      "despesa": 100000,
+      "lucro_liquido": 70000,
+      "saldo_acumulado": 252000,
+      "margem_lucro": 41.1764705882353
+    },
+    {
+      "mes": "mai",
+      "receita": 180000,
+      "despesa": 105000,
+      "lucro_liquido": 75000,
+      "saldo_acumulado": 327000,
+      "margem_lucro": 41.666666666666664
+    },
+    {
+      "mes": "jun",
+      "receita": 200000,
+      "despesa": 110000,
+      "lucro_liquido": 90000,
+      "saldo_acumulado": 417000,
+      "margem_lucro": 45
+    },
+    {
+      "mes": "jul",
+      "receita": 190000,
+      "despesa": 95000,
+      "lucro_liquido": 95000,
+      "saldo_acumulado": 512000,
+      "margem_lucro": 50
+    },
+    {
+      "mes": "ago",
+      "receita": 210000,
+      "despesa": 100000,
+      "lucro_liquido": 110000,
+      "saldo_acumulado": 622000,
+      "margem_lucro": 52.38095238095238
+    },
+    {
+      "mes": "set",
+      "receita": 220000,
+      "despesa": 98000,
+      "lucro_liquido": 122000,
+      "saldo_acumulado": 744000,
+      "margem_lucro": 55.45454545454545
+    },
+    {
+      "mes": "out",
+      "receita": 240000,
+      "despesa": 115000,
+      "lucro_liquido": 125000,
+      "saldo_acumulado": 869000,
+      "margem_lucro": 52.083333333333336
+    },
+    {
+      "mes": "nov",
+      "receita": 230000,
+      "despesa": 105000,
+      "lucro_liquido": 125000,
+      "saldo_acumulado": 994000,
+      "margem_lucro": 54.34782608695652
+    },
+    {
+      "mes": "dez",
+      "receita": 250000,
+      "despesa": 120000,
+      "lucro_liquido": 130000,
+      "saldo_acumulado": 1124000,
+      "margem_lucro": 52
+    }
+  ],
+  "funcionarios": 120,
+  "ativos_totais": 3500000,
+  "passivos_totais": 1500000
+}

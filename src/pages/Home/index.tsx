@@ -1,61 +1,42 @@
-import React, { useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from '../../../hooks'
-import { updateData } from '../../redux/dataSlice'
-import fetchData from '../../api'
-
-import { Typography } from '@mui/material'
-import Frame from '../../components/Frame'
-import Chart from '../../components/Chart'
-import {
-  Container,
-  ChartsContainer
-} from './styles.tsx'
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Typography } from '@mui/material';
+import Frame from '../../components/Frame';
+import Card from '../../components/Card';
+import Chart from '../../components/Chart';
+import { Container, ChartsContainer } from './styles.tsx';
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
 
-  const dispatch = useAppDispatch()
-  const data = useAppSelector((data) => data.data)
+  // Obtém as informações do usuário do localStorage
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
 
   useEffect(() => {
-    fetchData('latitude=-22.981&longitude=-43.2029&hourly=temperature_2m&forecast_days=1&hourly=wind_speed_10m&hourly=wind_direction_10m').then((res) => {
-      dispatch(updateData({
-        time: res.hourly.time,
-        temperature_2m: res.hourly.temperature_2m,
-        wind_speed_10m: res.hourly.wind_speed_10m
-      }))
-    })
-  }, [])
+    // Verifique se o usuário está logado
+    if (!user.id) {
+      // Se não estiver logado, redirecione para a página de login
+      navigate('/login');
+    }
+  }, [user, navigate]);
 
   return (
-    <Container>
-      <Frame>
-        <Typography
-          variant='h1'
-          component='h1'
-        >
-          Praia de Ipanema
-        </Typography>
-        <Typography
-          variant='body1'
-        >
-          Informações gerais sobre as condições climáticas nas últimas 24 horas.
+    <Frame>
+      <Container>
+        <Typography variant="h1" component="h1">
+          Olá, {user.email || 'Usuário'}.
         </Typography>
         <ChartsContainer>
-          <Chart
-            label='Temperatura em ºC'
-            time={data.time}
-            data={data.temperature_2m}
-          />
-          <Chart
-            label='Velocidade do vento'
-            time={data.time}
-            data={data.wind_speed_10m}
-          />
-                
+          <Card>{/* Seu conteúdo do card */}</Card>
+          <Card>{/* Seu conteúdo do card */}</Card>
+          <Card>{/* Seu conteúdo do card */}</Card>
         </ChartsContainer>
-      </Frame>
-    </Container>
-  )
-}
+        <ChartsContainer>
+          <Chart title="Balanço financeiro anual" keys={['lucro_liquido', 'receita', 'despesa']} />
+        </ChartsContainer>
+      </Container>
+    </Frame>
+  );
+};
 
 export default Home

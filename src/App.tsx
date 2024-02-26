@@ -6,6 +6,7 @@ import {
 } from "react-router-dom"
 
 import Home from './pages/Home'
+import Login from './pages/Login'
 
 import './App.css'
 
@@ -14,7 +15,7 @@ const App: React.FC = () => {
     <>
       <Routes>
         <Route index element={<Home />} />
-        {/* <Route path='login' element={<Login />} /> */}
+        <Route path='login' element={<Login />} />
         {/* Componente para quando não encontrar uma rota */}
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>   
