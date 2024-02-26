@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-
+import React, { useEffect } from 'react';
 import {
   Chart as ChartJS,
   ChartType,
@@ -9,7 +8,14 @@ import {
   Filler,
   Tooltip,
   Legend,
-} from 'chart.js'
+} from 'chart.js/auto';  // Usar 'chart.js/auto' para versões mais recentes
+
+import 'chart.js/auto';
+import { Typography } from '@mui/material';
+import { Chart as ChartJS2, ChartData, ChartOptions } from 'react-chartjs-2';
+
+import { ChartContainer } from './styles';
+import finances from './data.json';
 
 ChartJS.register(
   RadialLinearScale,
@@ -18,45 +24,32 @@ ChartJS.register(
   Filler,
   Tooltip,
   Legend
-)
+);
 
-import 'chart.js/auto'
-
-import { Typography } from '@mui/material'
-
-import { Chart } from 'react-chartjs-2'
-
-import { ChartContainer } from './styles'
-
-import finances from './data.json'
-
-const BarChart: React.FC <{
-  title: string,
-  keys: string[]
+const BarChart: React.FC<{
+  title: string;
+  keys: string[];
 }> = ({ title, keys }) => {
-
-  useEffect(() => {
-  }, [])
+  useEffect(() => {}, []);
 
   const labels = [
-    'Jan', 
-    'Fev', 
-    'Mar', 
-    'Abr', 
-    'Mai', 
-    'Jun', 
-    'Jul', 
-    'Ago', 
-    'Set', 
-    'Out', 
-    'Nov', 
-    'Dez'
-  ]
+    'Jan',
+    'Fev',
+    'Mar',
+    'Abr',
+    'Mai',
+    'Jun',
+    'Jul',
+    'Ago',
+    'Set',
+    'Out',
+    'Nov',
+    'Dez',
+  ];
 
-  const _data = {
+  const _data: ChartData = {
     labels: labels,
-    datasets:
-    [
+    datasets: [
       {
         type: 'line' as ChartType,
         id: 0,
@@ -66,7 +59,7 @@ const BarChart: React.FC <{
         backgroundColor: 'rgba(54, 162, 235, 0.2)',
         borderColor: 'rgb(54, 162, 235)',
         pointBackgroundColor: 'rgb(54, 162, 235)',
-        pointHoverBorderColor: 'rgb(54, 162, 235)' 
+        pointHoverBorderColor: 'rgb(54, 162, 235)',
       },
       {
         type: 'bar' as ChartType,
@@ -77,7 +70,7 @@ const BarChart: React.FC <{
         backgroundColor: 'rgba(60, 179, 113, 0.2)',
         borderColor: 'rgb(60, 179, 132)',
         pointBackgroundColor: 'rgb(60, 179, 132)',
-        pointHoverBorderColor: 'rgb(60, 179, 132)'
+        pointHoverBorderColor: 'rgb(60, 179, 132)',
       },
       {
         type: 'bar' as ChartType,
@@ -88,12 +81,12 @@ const BarChart: React.FC <{
         backgroundColor: 'rgb(255, 99, 132, 0.2)',
         borderColor: 'rgb(255, 99, 132)',
         pointBackgroundColor: 'rgb(255, 99, 132)',
-        pointHoverBorderColor: 'rgb(255, 99, 132)'
+        pointHoverBorderColor: 'rgb(255, 99, 132)',
       },
-    ]
-  }
+    ],
+  };
 
-  const options = {
+  const options: ChartOptions = {
     scales: {
       y: {
         ticks: {
@@ -104,28 +97,27 @@ const BarChart: React.FC <{
     plugins: {
       tooltip: {
         callbacks: {
-          label: (context: any) => `R$ ${context.parsed.y.toLocaleString('en-US', { maximumFractionDigits: 2 })}`,
+          label: (context: any) =>
+            `R$ ${context.parsed.y.toLocaleString('en-US', {
+              maximumFractionDigits: 2,
+            })}`,
         },
       },
     },
-  }
- 
+  };
+
   return (
     <ChartContainer>
-      <Typography
-        variant='h6'
-      >
-        { title }
-      </Typography>
-      <Chart
-        type='bar'
+      <Typography variant="h6">{title}</Typography>
+      <ChartJS2
+        type="bar"
         data={_data}
         options={options}
-        width={'100%'}
-        height={'100%'}
+        width={100}
+        height={50}
       />
     </ChartContainer>
-  )
-}
+  );
+};
 
 export default BarChart
