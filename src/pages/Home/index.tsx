@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Typography } from '@mui/material';
-import Frame from '../../components/Frame';
-import Card from '../../components/Card';
-import Chart from '../../components/Chart';
-import { Container, ChartsContainer } from './styles.tsx';
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Typography } from '@mui/material'
+import Frame from '../../components/Frame'
+import Card from '../../components/Card'
+import Chart from '../../components/Chart'
+import { Container, ChartsContainer } from './styles.tsx'
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const user = JSON.parse(localStorage.getItem('user') || '{}')
 
   useEffect(() => {
     if (!user.id) {
-      navigate('/login');
+      navigate('/login')
     }
-  }, [user, navigate]);
+  }, [user, navigate])
 
   return (
     <Frame>
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
         </ChartsContainer>
       </Container>
     </Frame>
-  );
-};
+  )
+}
 
 export default Home

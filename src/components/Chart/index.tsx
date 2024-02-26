@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import {
   Chart as ChartJS,
   ChartType,
@@ -8,15 +8,15 @@ import {
   Filler,
   Tooltip,
   Legend,
-} from 'chart.js/auto';  // Usar 'chart.js/auto' para versões mais recentes
+} from 'chart.js/auto'
 
-import 'chart.js/auto';
-import { Typography } from '@mui/material';
-import { Chart as ChartJS2 } from 'react-chartjs-2';
-import type { ChartData, ChartOptions } from 'chart.js'; 
+import 'chart.js/auto'
+import { Typography } from '@mui/material'
+import { Chart as ChartJS2 } from 'react-chartjs-2'
+import type { ChartData, ChartOptions } from 'chart.js' 
 
-import { ChartContainer } from './styles';
-import finances from './data.json';
+import { ChartContainer } from './styles'
+import finances from './data.json'
 
 ChartJS.register(
   RadialLinearScale,
@@ -25,13 +25,13 @@ ChartJS.register(
   Filler,
   Tooltip,
   Legend
-);
+)
 
 const BarChart: React.FC<{
-  title: string;
-  keys: string[];
+  title: string
+  keys: string[]
 }> = ({ title, keys }) => {
-  useEffect(() => {}, []);
+  useEffect(() => {}, [])
 
   const labels = [
     'Jan',
@@ -46,7 +46,7 @@ const BarChart: React.FC<{
     'Out',
     'Nov',
     'Dez',
-  ];
+  ]
 
   const _data: ChartData = {
     labels: labels,
@@ -82,7 +82,7 @@ const BarChart: React.FC<{
         pointHoverBorderColor: 'rgb(255, 99, 132)',
       },
     ],
-  };
+  }
 
   const options: ChartOptions = {
     scales: {
@@ -101,7 +101,7 @@ const BarChart: React.FC<{
         },
       },
     },
-  };
+  }
 
   return (
     <ChartContainer>
@@ -114,7 +114,7 @@ const BarChart: React.FC<{
         height={50}
       />
     </ChartContainer>
-  );
-};
+  )
+}
 
 export default BarChart
