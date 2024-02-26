@@ -9,13 +9,10 @@ import { Container, ChartsContainer } from './styles.tsx';
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
-  // Obtém as informações do usuário do localStorage
   const user = JSON.parse(localStorage.getItem('user') || '{}');
 
   useEffect(() => {
-    // Verifique se o usuário está logado
     if (!user.id) {
-      // Se não estiver logado, redirecione para a página de login
       navigate('/login');
     }
   }, [user, navigate]);
