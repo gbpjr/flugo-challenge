@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { auth, signInWithEmailAndPassword } from '../../firebase'
+import { auth } from '../../firebase'
 import { Box, Drawer, CssBaseline, AppBar, Toolbar, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText, IconButton, Menu, MenuItem } from '@mui/material'
 import { Dashboard as DashboardIcon, Group as GroupIcon, ExitToApp as ExitToAppIcon, Person as PersonIcon, Settings as SettingsIcon } from '@mui/icons-material'
 import { Logo, Content } from './styles'
