@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { auth, signInWithEmailAndPassword } from '../../firebase'
 import { useNavigate } from 'react-router-dom'
 import { TextField, InputAdornment, Input, IconButton } from '@mui/material'
+import Alert from '../Alert'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import { LoginContainer, LoginFormWrapper, StyledButton } from './styles'
@@ -9,6 +10,7 @@ import { Logo } from './styles'
 import flugo_logo from '../../assets/flugo_logo.png'
 
 const LoginForm: React.FC = () => {
+  const [error, setError] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -34,7 +36,7 @@ const LoginForm: React.FC = () => {
         navigate('/')
       })
       .catch((error) => {
-        console.log(error)
+        setError(true)
       })
   }
 
@@ -43,6 +45,9 @@ const LoginForm: React.FC = () => {
       <LoginFormWrapper
         onSubmit={(e) => login(e)}
       >
+        {
+          error && <Alert/>
+        }
         <Logo src={flugo_logo} />
         <TextField
           id="email"
