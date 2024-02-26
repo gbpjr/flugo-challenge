@@ -77,7 +77,7 @@ const BarChart: React.FC<{
         data: finances.dados_financeiros.map((mes) => mes['despesa']),
         borderWidth: 1,
         backgroundColor: 'rgb(255, 99, 132, 0.2)',
-        borderColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(220,20,60)',
         pointBackgroundColor: 'rgb(255, 99, 132)',
         pointHoverBorderColor: 'rgb(255, 99, 132)',
       },

@@ -50,6 +50,7 @@ const LoginForm: React.FC = () => {
           variant="standard"
           fullWidth
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
         <Input
@@ -58,6 +59,7 @@ const LoginForm: React.FC = () => {
           type={showPassword ? 'text' : 'password'}
           value={password}
           fullWidth
+          required
           onChange={(e) => setPassword(e.target.value)}
           endAdornment={
             <InputAdornment position="end">

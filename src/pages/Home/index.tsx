@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   return (
     <Frame>
       <Container>
-        <Typography variant="h1" component="h1">
+        <Typography variant="h6" component="h1">
           Olá, {user.email || 'Usuário'}.
         </Typography>
         <ChartsContainer>
