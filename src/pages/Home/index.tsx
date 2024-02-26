@@ -31,16 +31,19 @@ const Home: React.FC = () => {
             title='Receita'
             value={250000}
             color='rgba(60, 179, 113)'
+            percentage={8.70}
           />
           <Card
             title='Despesas'
             value={120000}
             color='rgb(255, 99, 132)'
+            percentage={14.29}
           />
           <Card
             title='Lucro Líquido'
             value={130000}
             color='rgb(54, 162, 235)'
+            percentage={4}
           />
         </ChartsContainer>
         <ChartsContainer>

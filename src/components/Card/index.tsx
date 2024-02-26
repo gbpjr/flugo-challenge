@@ -6,7 +6,12 @@ import {
 import CountAnimation from '../CountAnimation'
 import { CardContainer } from './styles'
 
-const Card: React.FC <{title: string, value: number, color: string}>= ({ title, value, color }) => {
+const Card: React.FC <{
+  title: string, 
+  value: number, 
+  color: string, 
+  percentage: number
+}>= ({ title, value, color, percentage }) => {
   return (
     <CardContainer>
       <Typography
@@ -25,7 +30,7 @@ const Card: React.FC <{title: string, value: number, color: string}>= ({ title, 
         variant='overline'
         // color={'rgb(60, 179, 132)'}
       >
-        +22% em relação ao último mês
+        +{percentage}% em relação ao último mês
       </Typography>
     </CardContainer>
   )
