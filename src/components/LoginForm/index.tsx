@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
 
         navigate('/')
       })
-      .catch((error) => {
+      .catch(() => {
         setError(true)
       })
   }
