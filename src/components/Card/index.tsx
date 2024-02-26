@@ -28,7 +28,6 @@ const Card: React.FC <{
      </Typography>
      <Typography
         variant='overline'
-        // color={'rgb(60, 179, 132)'}
       >
         +{percentage}% em relação ao último mês
       </Typography>
