@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 
 import {
   Chart as ChartJS,
+  ChartType,
   RadialLinearScale,
   PointElement,
   LineElement,
@@ -57,7 +58,7 @@ const BarChart: React.FC <{
     datasets:
     [
       {
-        type: 'line' as const,
+        type: 'line' as ChartType,
         id: 0,
         label: keys[0].replace('_', ' '),
         data: finances.dados_financeiros.map((mes) => mes['lucro_liquido']),
@@ -68,7 +69,7 @@ const BarChart: React.FC <{
         pointHoverBorderColor: 'rgb(54, 162, 235)' 
       },
       {
-        type: 'bar' as const,
+        type: 'bar' as ChartType,
         id: 1,
         label: keys[1],
         data: finances.dados_financeiros.map((mes) => mes['receita']),
@@ -79,7 +80,7 @@ const BarChart: React.FC <{
         pointHoverBorderColor: 'rgb(60, 179, 132)'
       },
       {
-        type: 'bar' as const,
+        type: 'bar' as ChartType,
         id: 2,
         label: keys[2],
         data: finances.dados_financeiros.map((mes) => mes['despesa']),

@@ -27,9 +27,21 @@ const Home: React.FC = () => {
           Olá, {user.email || 'Usuário'}.
         </Typography>
         <ChartsContainer>
-          <Card>{/* Seu conteúdo do card */}</Card>
-          <Card>{/* Seu conteúdo do card */}</Card>
-          <Card>{/* Seu conteúdo do card */}</Card>
+          <Card
+            title='Receita'
+            value={250000}
+            color='rgba(60, 179, 113)'
+          />
+          <Card
+            title='Despesas'
+            value={120000}
+            color='rgb(255, 99, 132)'
+          />
+          <Card
+            title='Lucro Líquido'
+            value={130000}
+            color='rgb(54, 162, 235)'
+          />
         </ChartsContainer>
         <ChartsContainer>
           <Chart title="Balanço financeiro anual" keys={['lucro_liquido', 'receita', 'despesa']} />
