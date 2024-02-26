@@ -22,7 +22,7 @@ const Card: React.FC <{
       <Typography
         variant='h6'
         color={color}
-        sx={{ display: 'flex', gap: '8px' }}
+        sx={{ display: 'flex', gap: '8px', fontWeight: '600' }}
       >
         R$ <CountAnimation finalValue={value} />
      </Typography>
